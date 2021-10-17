@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}All Messages{% endblock title %}
+
+{% block content %}
+    {% for message in message_list %}
+        <div class="card ms-4 my-1" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Message #{{ message.id }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ message.title }}</h6>
+                <p class="card-text">{{ message.body|truncate(50) }}...</p>
+                <div class="d-flex">
+                    <a href="#" class="card-link"><button class="btn btn-info">Read</button></a>
+                    <a href="#" class="card-link"><button class="btn btn-primary">Update</button></a>
+                    <a href="#" class="card-link"><button class="btn btn-danger">Delete</button></a>
+                </div>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock content %}
