@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Message Detail{% endblock title %}
+
+{% block content %}
+    <div class="border m-4 p-5 w-25">
+        <h1>{{ message.title }}</h1>
+        <p>{{ message.body }}</p>
+        <a href="#" class="card-link link-dark"><button class="btn btn-primary">Update</button></a>
+        <a href="#" class="card-link link-dark"><button class="btn btn-danger">Delete</button></a>
+    </div>
+</div>
+{% endblock content %}

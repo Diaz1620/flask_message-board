@@ -26,12 +26,15 @@ def create_message():
 
 @app.get("/messages")
 def get_all_messages():
-    return Message.query.all()
+    messages = Message.query.all()
+    return render_template("message_list.html", message_list=messages)
 
 @app.get("/messages/<int:pk>")
 def get_message_by_id(pk):
-    return Message.query.filter_by(id=pk).first()
+    message=Message.query.filter_by(id=pk).first()
+    return render_template("message_detail.html", message=message)
     
 @app.get("/greeting/<name>")
 def greet(name):
     return render_template("home.html", username=name)
+
